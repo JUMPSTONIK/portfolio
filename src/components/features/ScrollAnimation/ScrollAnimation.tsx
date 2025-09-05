@@ -26,7 +26,7 @@ export const ScrollAnimation: React.FC = () => {
           isOdd={idx % 2 === 0}
         />
       ))}
-      <div className={styles['scroll-container__spacer']} />
+      {/* <div className={styles['scroll-container__spacer']} /> */}
     </div>
   )
 }

@@ -14,7 +14,7 @@ export const animatedSections: AnimatedSectionData[] = [
     },
     {
         id: 2,
-        title: "Frameworks & Platforms",
+        title: "Frontend Frameworks",
         elements: [
             { id: 6, name: "React.js", content: "React.js", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg", delay: 0.00 },
             { id: 7, name: "Next.js", content: "Next.js", logo: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg", delay: 0.20 },
@@ -56,7 +56,6 @@ export const animatedSections: AnimatedSectionData[] = [
             { id: 25, name: "Chart.js", content: "Chart.js", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chart.js_logo.svg/384px-Chart.js_logo.svg.png?20240720195932", delay: 0.00 },
             { id: 26, name: "ApexCharts", content: "ApexCharts", logo: "https://ph-files.imgix.net/2364bb25-f440-4363-add2-55d5b1475f50.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=64&h=64&fit=crop&frame=1&dpr=2", delay: 0.22 },
             { id: 27, name: "Handlebars.js", content: "Handlebars.js", logo: "https://i0.wp.com/blog.fossasia.org/wp-content/uploads/2017/07/handlebars-js.png?w=500&ssl=1", delay: 0.10 },
-            { id: 28, name: "React Query", content: "React Query", logo: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/2/react-query-icon-xjukes5xosrrwg3y3ics1f.png/react-query-icon-2dw36yx2b016w37mbipyn.png?_a=DATAg1AAZAA0", delay: 0.28 }
         ]
     },
     {
@@ -85,7 +84,8 @@ export const animatedSections: AnimatedSectionData[] = [
             { id: 42, name: "Babel", content: "Babel", logo: "https://upload.wikimedia.org/wikipedia/commons/0/02/Babel_Logo.svg", delay: 0.24 },
             { id: 43, name: "Contentful", content: "Contentful", logo: "https://assets.stickpng.com/images/62c714c8b44be1961554a6d2.png", delay: 0.06 },
             { id: 44, name: "Netlify", content: "Netlify", logo: "https://www.netlify.com/v3/img/components/logomark.png", delay: 0.18 },
-            { id: 45, name: "Vercel", content: "Vercel", logo: "https://media.tekpon.com/2024/04/Vercel-Logo.webp", delay: 0.28 }
+            { id: 45, name: "Vercel", content: "Vercel", logo: "https://media.tekpon.com/2024/04/Vercel-Logo.webp", delay: 0.28 },
+            { id: 28, name: "React Query", content: "React Query", logo: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/2/react-query-icon-xjukes5xosrrwg3y3ics1f.png/react-query-icon-2dw36yx2b016w37mbipyn.png?_a=DATAg1AAZAA0", delay: 0.04 }
         ]
     },
     {

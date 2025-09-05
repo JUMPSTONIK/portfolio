@@ -40,14 +40,12 @@ export const AnimatedSection: React.FC<Props> = ({ title, elements, isOdd }) => 
 
         if (!section || !titleEl) return
 
-        // Get containers from refs
         const containers = els.map(ref => ref?.element).filter(Boolean)
 
         // Set initial state - solo para el contenedor, no para la tarjeta interna
         gsap.set(containers, { y: 200, opacity: 0, scale: 0.8 })
         gsap.set(titleEl, { x: isOdd ? -300 : 300, opacity: 0 })
 
-        // ScrollTrigger
         ScrollTrigger.create({
             trigger: section,
             start: "top 70%",
@@ -66,7 +64,6 @@ export const AnimatedSection: React.FC<Props> = ({ title, elements, isOdd }) => 
                             delay: elements[i]?.delay || 0,
                             ease: "back.out(1.7)",
                             onComplete: () => {
-                                // Iniciar la animación flotante después de que termine la entrada
                                 ref.startFloating()
                             }
                         })
@@ -80,7 +77,6 @@ export const AnimatedSection: React.FC<Props> = ({ title, elements, isOdd }) => 
                     duration: 0.6,
                     ease: "power3.in"
                 })
-                // Detener animaciones flotantes
                 els.forEach(ref => ref?.stopFloating())
             },
             onLeaveBack: () => {
@@ -91,14 +87,12 @@ export const AnimatedSection: React.FC<Props> = ({ title, elements, isOdd }) => 
                     ease: "power3.in"
                 })
                 
-                // Detener animaciones flotantes y resetear posición
                 els.forEach(ref => ref?.stopFloating())
                 gsap.set(containers, { y: 200, opacity: 0, scale: 0.8 })
             },
             onEnterBack: () => {
                 gsap.to(titleEl, { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" })
                 
-                // Reiniciar animaciones flotantes en el enter back
                 containers.forEach((container, i) => {
                     const ref = els[i]
                     if (container && ref) {
@@ -119,7 +113,6 @@ export const AnimatedSection: React.FC<Props> = ({ title, elements, isOdd }) => 
         })
 
         return () => {
-            // Cleanup
             ScrollTrigger.getAll().forEach(trigger => {
                 if (trigger.trigger === section) {
                     trigger.kill()
@@ -146,6 +139,7 @@ export const AnimatedSection: React.FC<Props> = ({ title, elements, isOdd }) => 
                         ref={(node) => {
                             elementsRef.current[i] = node
                         }}
+                        name={el.name}
                     >
                         {el.logo ? (
                             <TechLogo

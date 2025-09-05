@@ -1,6 +1,7 @@
 import React, { forwardRef, useRef, useEffect, useImperativeHandle } from 'react'
 import { gsap } from 'gsap'
 import styles from './FloatingElement.module.sass'
+import { Text } from '@chakra-ui/react'
 
 interface FloatingElementRef {
   element: HTMLDivElement | null
@@ -8,8 +9,8 @@ interface FloatingElementRef {
   startFloating: () => void
 }
 
-export const FloatingElement = forwardRef<FloatingElementRef, { children: React.ReactNode }>(
-  ({ children }, ref) => {
+export const FloatingElement = forwardRef<FloatingElementRef, { children: React.ReactNode, name?: string; }>(
+  ({ children, name }, ref) => {
     const containerRef = useRef<HTMLDivElement>(null)
     const cardRef = useRef<HTMLDivElement>(null)
     const floatingTween = useRef<gsap.core.Tween | null>(null)
@@ -89,7 +90,9 @@ export const FloatingElement = forwardRef<FloatingElementRef, { children: React.
             {children}
           </div>
           <div className={`${styles['floating-element__face']} ${styles['floating-element__face--back']}`}>
-            <div className={styles['floating-element__glass']}></div>
+            <div className={styles['floating-element__glass']}>
+              {name && <Text className={styles['floating-element__glass__name']}>{name}</Text>}
+            </div>
           </div>
         </div>
       </div>
