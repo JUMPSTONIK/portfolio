@@ -1,0 +1,60 @@
+$shadow-medium: 0 8px 25px rgba(139, 92, 246, 0.25)
+.hero
+    position: relative
+    overflow: hidden
+
+    &__avatar
+        +fade-in-up(500ms, 0ms, 30px)
+
+    &__content
+        position: relative
+        z-index: 10
+
+    &__titles
+        margin-bottom: 1rem
+
+    &__title
+        font-size: 2rem
+        margin-bottom: 0.5rem
+        +fade-in-up(500ms, 250ms, 30px)
+
+        +tablet
+            font-size: clamp(2rem, 5vw, 3.5rem)
+
+    &__subtitle
+        font-size: 1.25rem
+        opacity: 0.8
+        +fade-in-up(500ms, 500ms, 30px)
+
+        +tablet
+            font-size: clamp(1.25rem, 3vw, 1.5rem)
+
+    &__description
+        max-width: 500px
+        margin: 0 auto
+        line-height: 1.6
+        font-size: 1rem
+        padding: 0 1rem
+        +fade-in-up(500ms, 750ms, 30px)
+
+        +tablet
+            font-size: inherit
+            padding: 0
+
+    &__actions
+        margin-top: 2rem
+        display: flex
+        gap: 1rem
+        flex-direction: column
+        width: 100%
+        gap: 1rem
+
+        +tablet
+            flex-direction: row
+            width: auto
+
+        &__btn_left
+            +fade-in-up(500ms, 1000ms, 30px)
+
+        &__btn_right
+            +fade-in-up(500ms, 1250ms, 30px)

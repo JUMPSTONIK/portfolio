@@ -1,0 +1,26 @@
+$transition-smooth: all 0.3s ease
+
+.avatar
+    position: relative
+    transition: $transition-smooth
+
+    &:hover
+        transform: scale(1.05)
+
+    &__overlay
+        position: absolute
+        opacity: .2
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        animation: glow-pulse 3s ease-in-out infinite
+        border-radius: 9999px
+        background-image: $linear-gradient-primary
+
+@keyframes float
+    0%, 100%
+        box-shadow: 0 0 20px #7c3bed33
+
+    50%
+        box-shadow: 0 0 40px #7c3bed66

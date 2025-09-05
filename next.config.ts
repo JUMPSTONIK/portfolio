@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
     ],
     additionalData: `
       @use "_breakpoints.sass" as *;
+      @use "_variables.sass" as *;
+      @use "_mixins.sass" as *;
     `,
   },
    images: {
