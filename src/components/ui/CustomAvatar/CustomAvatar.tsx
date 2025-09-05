@@ -9,14 +9,14 @@ type CustomAvatarProps = {
 }
 export const CustomAvatar: FC<CustomAvatarProps> = ({ profileImage, className }) => {
     return (
-        <Box className={`${styles.avatar} ${className}`}>
+        <Box className={`${styles.container} ${className}`}>
             <Avatar
+                size='full'
                 src={profileImage}
-                size="2xl"
                 border="4px solid #e5e7eb"
                 boxShadow="0 10px 30px rgba(139, 92, 246, 0.3)"
             />
-            <div className={`${styles.avatar__overlay}`}></div>
+            <div className={`${styles.container__overlay}`}></div>
         </Box>
     )
 }
