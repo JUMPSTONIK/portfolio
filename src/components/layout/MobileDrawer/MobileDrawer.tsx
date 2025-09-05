@@ -58,7 +58,6 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
             <DrawerContent className={styles.drawer}>
                 <DrawerHeader className={styles.drawer__header}>
                     <DrawerCloseButton className={styles.drawer__close} />
-                    <Text className={styles.drawer__title}>Navegación</Text>
                     <Text className={styles.drawer__subtitle}>Explora mi trabajo y experiencia</Text>
                 </DrawerHeader>
 
