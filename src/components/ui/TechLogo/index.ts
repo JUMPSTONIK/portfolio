@@ -1,0 +1,1 @@
+export { TechLogo } from './TechLogo';
