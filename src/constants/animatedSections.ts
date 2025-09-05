@@ -109,14 +109,6 @@ export const animatedSections: AnimatedSectionData[] = [
     },
     {
         id: 10,
-        title: "Commerce Platforms",
-        elements: [
-            { id: 53, name: "BigCommerce", content: "BigCommerce", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Bc-logo-dark.svg", delay: 0.00 },
-            { id: 54, name: "Shopify", content: "Shopify", logo: "https://cdn.freebiesupply.com/logos/large/2x/shopify-logo-png-transparent.png", delay: 0.20 }
-        ]
-    },
-    {
-        id: 11,
         title: "AI & Productivity Tools",
         elements: [
             { id: 55, name: "ChatGPT", content: "ChatGPT", logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", delay: 0.00 },
@@ -126,5 +118,13 @@ export const animatedSections: AnimatedSectionData[] = [
             { id: 59, name: "Blackbox", content: "Blackbox", logo: "https://softat.co.in/wp-content/uploads/2024/06/image-8.png", delay: 0.22 },
             { id: 60, name: "Lovable", content: "Lovable", logo: "https://lovable.dev/img/logo/lovable-logo-icon.png", delay: 0.10 }
         ]
-    }
+    },
+    {
+        id: 11,
+        title: "Commerce Platforms",
+        elements: [
+            { id: 53, name: "BigCommerce", content: "BigCommerce", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Bc-logo-dark.svg", delay: 0.00 },
+            { id: 54, name: "Shopify", content: "Shopify", logo: "https://cdn.freebiesupply.com/logos/large/2x/shopify-logo-png-transparent.png", delay: 0.20 }
+        ]
+    },
 ]
