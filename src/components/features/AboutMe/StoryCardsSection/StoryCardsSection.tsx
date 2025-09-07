@@ -154,6 +154,7 @@ export const StoryCardsSection: React.FC = () => {
                         <Box
                             key={index}
                             width={'fit-content'}
+                            zIndex={0}
                             ref={(el) => addToRefs(el, index)}
                         >
                             <StoryCard card={card} />
