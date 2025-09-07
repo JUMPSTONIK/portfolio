@@ -73,18 +73,18 @@ export const animatedSections: AnimatedSectionData[] = [
         id: 7,
         title: "Development & Deployment Tools",
         elements: [
-            { id: 34, name: "Git", content: "Git", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg", delay: 0.00 },
+            { id: 34, name: "Git", content: "Git", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/194px-Git_icon.svg.png?20220905010122", delay: 0.00 },
             { id: 35, name: "GitHub", content: "GitHub", logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png", delay: 0.14 },
-            { id: 36, name: "GitLab", content: "GitLab", logo: "https://about.gitlab.com/images/press/logo/png/gitlab-logo-gray-rgb.png", delay: 0.26 },
+            { id: 36, name: "GitLab", content: "GitLab", logo: "https://images.icon-icons.com/2699/PNG/512/gitlab_logo_icon_169112.png", delay: 0.26 },
             { id: 37, name: "NX", content: "NX", logo: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*amx8k-Upat1L7RzluiMcow.png", delay: 0.08 },
-            { id: 38, name: "Docker", content: "Docker", logo: "https://logos-world.net/wp-content/uploads/2021/02/Docker-Logo-2013-2015.png", delay: 0.20 },
-            { id: 39, name: "Webpack", content: "Webpack", logo: "https://upload.wikimedia.org/wikipedia/commons/9/94/Webpack.svg", delay: 0.10 },
+            { id: 38, name: "Docker", content: "Docker", logo: "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-1024.png", delay: 0.20 },
+            { id: 39, name: "Webpack", content: "Webpack", logo: "https://raw.githubusercontent.com/webpack/media/master/logo/icon.png", delay: 0.10 },
             { id: 40, name: "Vite", content: "Vite", logo: "https://vitejs.dev/logo.svg", delay: 0.30 },
             { id: 41, name: "Bun", content: "Bun", logo: "https://bun.sh/logo.svg", delay: 0.12 },
             { id: 42, name: "Babel", content: "Babel", logo: "https://upload.wikimedia.org/wikipedia/commons/0/02/Babel_Logo.svg", delay: 0.24 },
             { id: 43, name: "Contentful", content: "Contentful", logo: "https://assets.stickpng.com/images/62c714c8b44be1961554a6d2.png", delay: 0.06 },
             { id: 44, name: "Netlify", content: "Netlify", logo: "https://www.netlify.com/v3/img/components/logomark.png", delay: 0.18 },
-            { id: 45, name: "Vercel", content: "Vercel", logo: "https://media.tekpon.com/2024/04/Vercel-Logo.webp", delay: 0.28 },
+            { id: 45, name: "Vercel", content: "Vercel", logo: "https://pipedream.com/s.v0/app_XaLh2x/logo/orig", delay: 0.28 },
             { id: 28, name: "React Query", content: "React Query", logo: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/2/react-query-icon-xjukes5xosrrwg3y3ics1f.png/react-query-icon-2dw36yx2b016w37mbipyn.png?_a=DATAg1AAZAA0", delay: 0.04 }
         ]
     },
@@ -112,8 +112,8 @@ export const animatedSections: AnimatedSectionData[] = [
         title: "AI & Productivity Tools",
         elements: [
             { id: 55, name: "ChatGPT", content: "ChatGPT", logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", delay: 0.00 },
-            { id: 56, name: "Claude", content: "Claude", logo: "https://pnghdpro.com/wp-content/themes/pnghdpro/download/social-media-and-brands/claude-logo.png", delay: 0.14 },
-            { id: 57, name: "Gemini", content: "Gemini", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/688px-Google_Gemini_logo.svg.png", delay: 0.26 },
+            { id: 56, name: "Claude", content: "Claude", logo: "https://assets.stickpng.com/images/66af99839e55f1ee29f117ac.png", delay: 0.14 },
+            { id: 57, name: "Gemini", content: "Gemini", logo: "https://helios-i.mashable.com/imagery/articles/00zEnhbB6mXQs8x5yXw38bT/images-2.fit_lim.size_376x.png", delay: 0.26 },
             { id: 58, name: "Cursor", content: "Cursor", logo: "https://framerusercontent.com/images/lfSBU4EhKcMg3iGg98L2F1ESfA.jpg", delay: 0.08 },
             { id: 59, name: "Blackbox", content: "Blackbox", logo: "https://softat.co.in/wp-content/uploads/2024/06/image-8.png", delay: 0.22 },
             { id: 60, name: "Lovable", content: "Lovable", logo: "https://lovable.dev/img/logo/lovable-logo-icon.png", delay: 0.10 }

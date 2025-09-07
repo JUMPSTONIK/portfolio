@@ -1,10 +1,9 @@
 
 'use client'
 import { useGSAPBubbles } from "@/hooks/useGSAPBubbles";
-import { Box, VStack, Heading, HStack, Button, Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { FC, ReactNode, useRef } from "react";
 import styles from './HeroContainer.module.sass'
-import { CustomAvatar } from "@/components/ui/CustomAvatar/CustomAvatar";
 
 type HeroContainerProps = {
     children: ReactNode

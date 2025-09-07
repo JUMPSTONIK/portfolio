@@ -1,0 +1,63 @@
+.story-card
+    cursor: pointer
+    transition: all 0.3s
+    transform: scale(1)
+    height: 100%
+    padding: 1.5rem
+    border-radius: 0.75rem
+    border: 1px solid #f3f4f6
+    background-color: white
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08)
+
+    &:hover
+        transform: scale(1.05)
+
+    &--active
+        background-color: #8b5cf6
+        border-color: #8b5cf6
+        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15)
+
+        .story-card__icon-wrapper
+            background: rgba(255, 255, 255, 0.2)
+
+        .story-card__title
+            color: white
+
+        .story-card__story
+            color: rgba(255, 255, 255, 0.9)
+
+        .story-card__highlight
+            color: rgba(255, 255, 255, 0.8)
+
+    &__icon-wrapper
+        width: 3rem
+        height: 3rem
+        border-radius: 0.75rem
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-bottom: 1rem
+        transition: all 0.3s
+        background: linear-gradient(135deg, #7c3aed, #ec4899)
+        color: white
+
+    &__title
+        font-size: 1.125rem
+        font-weight: bold
+        margin-bottom: 0.75rem
+        transition: color 0.3s
+        color: #374151
+
+    &__story
+        font-size: 0.875rem
+        line-height: 1.75
+        margin-bottom: 1rem
+        transition: color 0.3s
+        color: #6b7280
+
+    &__highlight
+        font-size: 0.75rem
+        font-weight: 600
+        font-style: italic
+        transition: color 0.3s
+        color: #8b5cf6

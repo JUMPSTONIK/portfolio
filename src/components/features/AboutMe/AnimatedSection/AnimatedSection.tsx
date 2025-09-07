@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import styles from './AnimatedSection.module.sass'
-import { FloatingElement } from '../../ui/FloatingElement'
+import { FloatingElement } from '../../../ui/FloatingElement'
 import { TechLogo } from '@/components/ui/TechLogo/TechLogo'
 
 gsap.registerPlugin(ScrollTrigger)

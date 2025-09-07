@@ -1,9 +1,16 @@
-import {ScrollAnimation} from "@/components/features/ScrollAnimation/ScrollAnimation";
+import { ScrollAnimation } from "@/components/features/AboutMe/ScrollAnimation/ScrollAnimation";
+import { StoryCardsSection } from "@/components/features/AboutMe/StoryCardsSection";
 
 export default function Home() {
   return (
     <>
-    <ScrollAnimation/>
+      {/* <HeroSection />
+      <JourneySection /> */}
+      <StoryCardsSection />
+      {/* <CoreValuesSection /> */}
+      <ScrollAnimation />
+      {/* <CallToActionSection /> */}
     </>
   );
 }
+
