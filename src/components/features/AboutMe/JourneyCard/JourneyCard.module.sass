@@ -1,0 +1,97 @@
+.card
+    position: relative
+    overflow: hidden
+    border-radius: 1rem
+    border: 1px solid #1f2937
+    background-color: rgba(17, 24, 39, 0.5)
+    backdrop-filter: blur(12px)
+    transition: all 0.5s
+    box-shadow: var(--card-shadow-default)
+
+    &:hover
+        transform: scale(1.02)
+        box-shadow: var(--card-shadow-hover)
+
+        .card__image
+            transform: scale(1.1)
+
+        .card__glow
+            opacity: 1
+
+    &__layout
+        display: flex
+        flex-direction: column
+        +tablet
+            flex-direction: row
+
+    &__imageSection
+        position: relative
+        height: 12rem
+        overflow: hidden
+        +tablet
+            height: auto
+            width: 33.3333%
+
+    &__image
+        width: 100%
+        height: 100%
+        object-fit: cover
+        filter: brightness(0.7) contrast(1.2)
+        transition: transform 0.5s
+
+    &__imageOverlay
+        position: absolute
+        inset: 0
+        background: linear-gradient(to bottom, transparent, rgba(15, 14, 23, 0.9))
+
+    &__iconBadge
+        position: absolute
+        top: 1rem
+        right: 1rem
+        width: 2.5rem
+        height: 2.5rem
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        color: white
+
+    &__content
+        flex: 1
+        padding: 1.5rem
+
+    &__year
+        font-size: 0.875rem
+        font-weight: bold
+        margin-bottom: 0.5rem
+
+    &__phase
+        font-size: 1.5rem
+        font-weight: bold
+        color: white
+        margin-bottom: 0.5rem
+
+    &__description
+        color: #9ca3af
+        margin-bottom: 0.75rem
+        line-height: 1.5
+
+    &__details
+        font-size: 0.875rem
+        color: #6b7280
+        margin-bottom: 1rem
+        line-height: 1.6
+
+    &__focus
+        font-size: 0.75rem
+        font-weight: 600
+        text-transform: uppercase
+        letter-spacing: 0.05em
+
+    &__glow
+        position: absolute
+        inset: 0
+        pointer-events: none
+        background: var(--card-glow)
+        opacity: 0
+        transition: opacity 0.25s
