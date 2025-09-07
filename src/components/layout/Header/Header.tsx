@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react'
 import {
     Box,
-    Flex,
     Button,
     IconButton,
     Link as ChakraLink,
@@ -14,34 +13,14 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import styles from './Header.module.sass'
 import { MobileDrawer } from '../MobileDrawer'
-
-interface NavItem {
-    href: string
-    label: string
-    badge?: string
-    isExternal?: boolean
-}
-
+import { navLinks } from '@/constants/navLinks'
 interface HeaderProps {
-    navItems?: NavItem[]
-    logoSrc?: string
     logoText?: string
     ctaText?: string
     onCtaClick?: () => void
 }
 
-const defaultNavItems: NavItem[] = [
-    { href: '/', label: 'Inicio' },
-    { href: '/about', label: 'Sobre mí' },
-    { href: '/projects', label: 'Proyectos', badge: '5' },
-    { href: '/experience', label: 'Experiencia' },
-    // { href: '/blog', label: 'Blog', badge: 'New' },
-    { href: '/resume', label: 'Resume', isExternal: true },
-]
-
 export const Header: React.FC<HeaderProps> = ({
-    navItems = defaultNavItems,
-    logoSrc,
     logoText = "Portfolio",
     ctaText = "Contacta me",
     onCtaClick
@@ -69,41 +48,36 @@ export const Header: React.FC<HeaderProps> = ({
             <Box
                 as="header"
                 className={`${styles.header} ${isScrolled ? styles['header--scrolled'] : ''}`}
-                display={isOpen? 'none' : ''}
+                display={isOpen ? 'none' : ''}
             >
                 <Box className={styles.header__container}>
-                    {/* Logo */}
-                    <Link href="/" passHref>
-                        <Flex as="a" className={styles.header__logo}>
-                            {logoSrc && <img src={logoSrc} alt={logoText} className={styles.header__logoImage} />}
-                            <span className={styles.header__logoText}>{logoText}</span>
-                        </Flex>
+                    <Link className={styles.header__logo} href="/" passHref>
+                        <span className={`${styles.header__logoText}`}>{logoText}</span>
                     </Link>
 
-                    {/* Desktop Navigation */}
                     <Box as="nav" className={styles.header__nav}>
-                        {navItems.map((item) => (
-                            <ChakraLink
-                                key={item.href}
-                                className={styles['nav-link']}
-                                onClick={() => handleNavigation(item.href, item.isExternal)}
+                        {navLinks.map((item) => (
+                            <ChakraLink 
+                                key={item.href} href={item.href} 
+                                target={item.isExternal ? '_blank' : undefined}
+                                className={`${styles['nav-link']} ${!isScrolled && '!text-brand-secondary'}`}
                             >
                                 {item.label}
-                                {item.badge && <span className={styles['nav-badge']}>{item.badge}</span>}
+                                {/* {item.badge && <span className={styles['nav-badge']}>{item.badge}</span>} */}
                                 {item.isExternal && <ExternalLinkIcon className={styles['nav-link-icon']} />}
                             </ChakraLink>
                         ))}
                     </Box>
 
-                    {/* CTA & Mobile Menu */}
                     <Box className={styles.header__actions}>
-                        <Button className={styles.header__cta} onClick={handleCta}>
+                        <ChakraLink href='/contact' className={styles.header__cta} >
                             {ctaText}
-                        </Button>
+                        </ChakraLink>
 
                         <IconButton
+                            size='lg'
                             aria-label="Toggle mobile menu"
-                            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                            icon={isOpen ? <CloseIcon width={50} height={50} /> : <HamburgerIcon color={isScrolled ? 'black' : '#7c3aed'} width={30} height={30}/>}
                             className={styles.header__menuButton}
                             onClick={isOpen ? onClose : onOpen}
                         />
@@ -114,13 +88,11 @@ export const Header: React.FC<HeaderProps> = ({
             <MobileDrawer
                 isOpen={isOpen}
                 onClose={onClose}
-                navItems={navItems}
+                navItems={navLinks}
                 ctaText={ctaText}
                 onNavigation={handleNavigation}
                 onCtaClick={handleCta}
             />
-
-            {/* Mobile Drawer */}
         </>
     )
 }

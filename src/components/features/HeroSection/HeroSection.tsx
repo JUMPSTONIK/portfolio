@@ -1,46 +1,14 @@
 
 'use client'
-import { useGSAPBubbles } from "@/hooks/useGSAPBubbles";
 import { Box, VStack, Heading, HStack, Button, Text } from "@chakra-ui/react";
-import { useRef } from "react";
 import styles from './HeroSection.module.sass'
 import { CustomAvatar } from "@/components/ui/CustomAvatar/CustomAvatar";
+import { HeroContainer } from "@/components/common/HeroContainer";
 
-interface HeroSectionProps {
-    profileImage?: string;
-    name?: string;
-    title?: string;
-    description?: string;
-    onViewProjects?: () => void;
-    onContact?: () => void;
-}
-
-export const HeroSection: React.FC<HeroSectionProps> = ({
-    profileImage = "https://media.licdn.com/dms/image/v2/D4E03AQHw5UjZStrVDQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1715630572476?e=1759968000&v=beta&t=npS6KIixhm7lrLIT3W3Rx-1B-3j7L3iobRrKIkOIf00",
-    name = "Senior Frontend Engineer",
-    title = "React & Angular Specialist",
-    description = "Creando experiencias digitales excepcionales con React, TypeScript y las últimas tecnologías frontend. Apasionado por el código limpio y el diseño intuitivo.",
-    onViewProjects = () => console.log('Ver Proyectos clicked'),
-    onContact = () => console.log('Contacto clicked')
-}) => {
-    const containerRef = useRef<HTMLDivElement | null>(null);
-
-    useGSAPBubbles(containerRef);
+export const HeroSection = () => {
 
     return (
-        <Box
-            ref={containerRef}
-            className={`${styles.hero}`}
-            position="relative"
-            minHeight="100vh"
-            background="linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 50%, #ddd6fe 100%)"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            overflow="hidden"
-            px={4}
-        >
-            {/* Main Content */}
+        <HeroContainer>
             <VStack
                 className={`${styles.hero__content}`}
                 spacing={6}
@@ -49,7 +17,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 position="relative"
                 maxWidth="600px"
             >
-                <CustomAvatar className={`${styles.hero__avatar}`} profileImage={profileImage}/>
+                <CustomAvatar className={`${styles.hero__avatar}`} profileImage={'https://media.licdn.com/dms/image/v2/D4E03AQHw5UjZStrVDQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1715630572476?e=1759968000&v=beta&t=npS6KIixhm7lrLIT3W3Rx-1B-3j7L3iobRrKIkOIf00'}/>
 
                 <VStack className={`${styles.hero__titles}`} spacing={2}>
                     <Heading
@@ -61,7 +29,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                         bgClip="text"
                         lineHeight="shorter"
                     >
-                        {name}
+                        Josue David Lopez
                     </Heading>
 
                     <Heading
@@ -71,7 +39,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                         color="#363d49cc"
                         fontWeight="600"
                     >
-                        {title}
+                        Senior Frontend Engineer
                     </Heading>
                 </VStack>
 
@@ -82,14 +50,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     lineHeight="relaxed"
                     maxWidth="500px"
                 >
-                    {description}
+                    Creando experiencias digitales excepcionales con React, TypeScript y las últimas tecnologías frontend. Apasionado por el código limpio y el diseño intuitivo.
                 </Text>
 
                 <Box className={`${styles.hero__actions}`} pt={4}>
                     <Button
                         className={`${styles.hero__actions__btn_left}`}
                         variant="primary"
-                        onClick={onViewProjects}
                         rightIcon={<span>→</span>}
                     >
                         Ver Proyectos
@@ -98,13 +65,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     <Button
                         className={`${styles.hero__actions__btn_right}`}
                         variant="secondary"
-                        onClick={onContact}
                         leftIcon={<span>💬</span>}
                     >
                         Contacto
                     </Button>
                 </Box>
             </VStack>
-        </Box>
+        </HeroContainer>
     );
 };

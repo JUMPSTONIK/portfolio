@@ -1,11 +1,6 @@
-$brand-primary: #8b5cf6
+
 $brand-hover: #7c3aed
-$brand-light: #a78bfa
 $transition-smooth: all 0.3s ease
-$transition-fast: all 0.2s ease
-$shadow-light: 0 2px 8px rgba(0,0,0,0.08)
-$shadow-medium: 0 4px 20px rgba(139,92,246,0.15)
-$border-radius: 12px
 
 .header
     position: fixed
@@ -74,6 +69,9 @@ $border-radius: 12px
         font-weight: 600
         transition: $transition-fast
         cursor: pointer
+        display: none
+        +desktop
+            display: block
         &:hover
             background: $brand-hover
             transform: translateY(-1px)

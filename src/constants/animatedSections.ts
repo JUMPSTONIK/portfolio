@@ -41,11 +41,11 @@ export const animatedSections: AnimatedSectionData[] = [
         id: 4,
         title: "State Management & Reactive Programming",
         elements: [
-            { id: 19, name: "Redux", content: "Redux", logo: "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png", delay: 0.00 },
+            { id: 19, name: "Redux", content: "Redux", logo: "https://cdn.worldvectorlogo.com/logos/redux.svg", delay: 0.00 },
             { id: 20, name: "MobX", content: "MobX", logo: "https://cdn.freebiesupply.com/logos/large/2x/mobx-logo-png-transparent.png", delay: 0.18 },
             { id: 21, name: "NgRX", content: "NgRX", logo: "https://ngrx.io/assets/images/badge.svg", delay: 0.06 },
-            { id: 22, name: "VueX", content: "VueX", logo: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*qc9iypKE2wJrvM99sUZF4Q.png", delay: 0.26 },
-            { id: 23, name: "Zustand", content: "Zustand", logo: "https://miro.medium.com/max/875/1*fKV3_Y4usDYZKPsNp1yCvA.png", delay: 0.12 },
+            { id: 22, name: "VueX", content: "VueX", logo: "https://user-images.githubusercontent.com/7110136/29002857-9e802f08-7ab4-11e7-9c31-604b5d0d0c19.png", delay: 0.26 },
+            { id: 23, name: "Zustand", content: "Zustand", logo: "https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg", delay: 0.12 },
             { id: 24, name: "RxJS", content: "RxJS", logo: "https://rxjs.dev/generated/images/marketing/home/Rx_Logo-512-512.png", delay: 0.30 }
         ]
     },
@@ -63,7 +63,7 @@ export const animatedSections: AnimatedSectionData[] = [
         title: "Backend & Databases",
         elements: [
             { id: 29, name: "Node.js", content: "Node.js", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg", delay: 0.00 },
-            { id: 30, name: "Express.js", content: "Express.js", logo: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png", delay: 0.16 },
+            { id: 30, name: "Express.js", content: "Express.js", logo: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/express-js-icon.png", delay: 0.16 },
             { id: 31, name: "PostgreSQL", content: "PostgreSQL", logo: "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg", delay: 0.06 },
             { id: 32, name: "MySQL", content: "MySQL", logo: "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg", delay: 0.24 },
             { id: 33, name: "Go", content: "Go", logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg", delay: 0.12 }
