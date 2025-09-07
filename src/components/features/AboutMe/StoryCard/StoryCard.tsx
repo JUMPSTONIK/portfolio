@@ -34,27 +34,27 @@ export const StoryCard: React.FC<StoryCardProps> = ({ card }) => {
                 backgroundColor: "#8b5cf6",
                 borderColor: "#8b5cf6",
                 boxShadow: "0 4px 20px rgba(139, 92, 246, 0.15)",
-                duration: 0.3,
+                duration: 0.2,
                 ease: "power2.out"
             })
             .to(icon, {
                 background: "rgba(255, 255, 255, 0.2)",
-                duration: 0.3,
+                duration: 0.2,
                 ease: "power2.out"
             }, 0)
             .to(title, {
                 color: "white",
-                duration: 0.3,
+                duration: 0.2,
                 ease: "power2.out"
             }, 0)
             .to(story, {
                 color: "rgba(255, 255, 255, 0.9)",
-                duration: 0.3,
+                duration: 0.2,
                 ease: "power2.out"
             }, 0)
             .to(highlight, {
                 color: "rgba(255, 255, 255, 0.8)",
-                duration: 0.3,
+                duration: 0.2,
                 ease: "power2.out"
             }, 0);
         };
@@ -67,27 +67,27 @@ export const StoryCard: React.FC<StoryCardProps> = ({ card }) => {
                 backgroundColor: "white",
                 borderColor: "#f3f4f6",
                 boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)",
-                duration: 0.3,
+                duration: 0.2,
                 ease: "power2.out"
             })
             .to(icon, {
                 background: "linear-gradient(135deg, #7c3aed, #ec4899)",
-                duration: 0.3,
+                duration: 0.2,
                 ease: "power2.out"
             }, 0)
             .to(title, {
                 color: "#374151",
-                duration: 0.3,
+                duration: 0.2,
                 ease: "power2.out"
             }, 0)
             .to(story, {
                 color: "#6b7280",
-                duration: 0.3,
+                duration: 0.2,
                 ease: "power2.out"
             }, 0)
             .to(highlight, {
                 color: "#8b5cf6",
-                duration: 0.3,
+                duration: 0.2,
                 ease: "power2.out"
             }, 0);
         };

@@ -20,20 +20,47 @@ export const StoryCardsSection: React.FC = () => {
 
         if (!section || cards.length === 0) return;
 
-        // Set initial states for cards - scattered around from different corners
+        // Define starting positions based on screen size
+        const getStartingPositions = () => {
+            const isMobile = window.innerWidth < 768;
+            const isTablet = window.innerWidth < 1024;
+            
+            if (isMobile) {
+                // Mobile: smaller distances, less rotation
+                return [
+                    { x: -150, y: -100, rotation: -25 },
+                    { x: 150, y: -100, rotation: 25 },
+                    { x: -150, y: 100, rotation: 25 },
+                    { x: 150, y: 100, rotation: -25 }
+                ];
+            } else if (isTablet) {
+                // Tablet: medium distances
+                return [
+                    { x: -200, y: -150, rotation: -35 },
+                    { x: 200, y: -150, rotation: 35 },
+                    { x: -200, y: 150, rotation: 35 },
+                    { x: 200, y: 150, rotation: -35 }
+                ];
+            } else {
+                // Desktop: full distances
+                return [
+                    { x: -300, y: -200, rotation: -45 },
+                    { x: 300, y: -200, rotation: 45 },
+                    { x: -300, y: 200, rotation: 135 },
+                    { x: 300, y: 200, rotation: -135 }
+                ];
+            }
+        };
+
+        const positions = getStartingPositions();
+
+        // Set initial states for cards and create individual scroll triggers
         cards.forEach((card, index) => {
             if (!card) return;
             
-            // Define starting positions based on card index
-            const positions = [
-                { x: -300, y: -200, rotation: -45 },    // Top-left
-                { x: 300, y: -200, rotation: 45 },      // Top-right
-                { x: -300, y: 200, rotation: 135 },     // Bottom-left
-                { x: 300, y: 200, rotation: -135 }      // Bottom-right
-            ];
-            
             const position = positions[index] || positions[index % 4];
             
+            // Set initial state
             gsap.set(card, {
                 x: position.x,
                 y: position.y,
@@ -41,53 +68,74 @@ export const StoryCardsSection: React.FC = () => {
                 scale: 0.5,
                 opacity: 0,
             });
-        });
 
-        // Create the magnetic assembly animation
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: section,
-                start: "center 90%", // Trigger when section center reaches 80% of viewport
-                end: "center 10%",
-                toggleActions: "play none none reverse",
-                // markers: true, // Uncomment for debugging
-            }
-        });
-
-        // Animate each card with staggered timing
-        cards.forEach((card, index) => {
-            if (!card) return;
-            
-            tl.to(card, {
-                x: 0,
-                y: 0,
-                rotation: 0,
-                scale: 1,
-                opacity: 1,
-                duration: 1.2,
-                ease: "back.out(1.7)", // Elastic bounce effect
-                onStart: () => {
-                    // Add a subtle magnetic "pull" effect
+            // Create individual ScrollTrigger for each card
+            ScrollTrigger.create({
+                trigger: card,
+                start: "top 85%", // Trigger when card top reaches 85% of viewport
+                end: "top 15%",
+                once: true, // Only trigger once, no reverse
+                onEnter: () => {
+                    // Animate this specific card
                     gsap.to(card, {
-                        scale: 1.05,
-                        duration: 0.1,
-                        yoyo: true,
-                        repeat: 1,
-                        ease: "power2.inOut"
+                        x: 0,
+                        y: 0,
+                        rotation: 0,
+                        scale: 1,
+                        opacity: 1,
+                        duration: 1,
+                        ease: "back.out(1.5)",
+                        onStart: () => {
+                            // Subtle magnetic snap effect
+                            gsap.to(card, {
+                                scale: 1.08,
+                                duration: 0.15,
+                                yoyo: true,
+                                repeat: 1,
+                                ease: "power2.inOut",
+                                delay: 0.8 // After main animation is almost complete
+                            });
+                        }
+                    });
+                },
+                // markers: true // Uncomment for debugging
+            });
+        });
+
+        // Handle window resize to recalculate positions if needed
+        const handleResize = () => {
+            const newPositions = getStartingPositions();
+            
+            cards.forEach((card, index) => {
+                if (!card) return;
+                
+                // Only update if card hasn't been animated yet
+                const cardStyle = window.getComputedStyle(card);
+                const opacity = parseFloat(cardStyle.opacity);
+                
+                if (opacity === 0) {
+                    const position = newPositions[index] || newPositions[index % 4];
+                    gsap.set(card, {
+                        x: position.x,
+                        y: position.y,
+                        rotation: position.rotation,
                     });
                 }
-            }, index * 0.2); // Stagger by 0.2 seconds
-        });
+            });
+        };
+
+        window.addEventListener('resize', handleResize);
 
         // Cleanup function
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
     // Function to add card refs
     const addToRefs = (el: HTMLDivElement | null, index: number) => {
-        if (el && !cardsRef.current.includes(el)) {
+        if (el) {
             cardsRef.current[index] = el;
         }
     };
