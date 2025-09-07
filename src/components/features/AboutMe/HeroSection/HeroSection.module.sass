@@ -7,41 +7,6 @@
     // overflow: hidden
     // background: linear-gradient(135deg, #7c3aed, #ec4899)
 
-    &__background
-        position: absolute
-        inset: 0
-        overflow: hidden
-        z-index: 0
-
-    &__circle--one,
-    &__circle--two,
-    &__circle--three
-        position: absolute
-        border-radius: 50%
-
-    &__circle--one
-        top: 5rem
-        left: 2.5rem
-        width: 8rem
-        height: 8rem
-        background-color: rgba(139, 92, 246, 0.1)
-        animation: pulse 3s infinite
-
-    &__circle--two
-        top: 10rem
-        right: 5rem
-        width: 5rem
-        height: 5rem
-        background-color: rgba(167, 139, 250, 0.15)
-        animation: bounce 4s infinite
-
-    &__circle--three
-        bottom: 8rem
-        left: 25%
-        width: 4rem
-        height: 4rem
-        background-color: rgba(139, 92, 246, 0.2)
-        animation: ping 2s infinite
 
     &__container
         position: relative
@@ -58,6 +23,12 @@
         margin-bottom: 1rem
         color: #363d49cc
 
+        +tablet
+            font-size: 1.5rem
+
+        +desktop
+            font-size: 2rem
+
     &__title
         font-size: 2.5rem
         font-weight: bold
@@ -66,10 +37,10 @@
         line-height: 1.2
 
         +tablet
-        font-size: 3.5rem
+            font-size: 4.5rem !important
 
         +desktop
-        font-size: 4.5rem
+            font-size: 5.5rem !important
 
     &__description
         font-size: 1.125rem

@@ -15,21 +15,14 @@ const stats = [
 export const HeroSection: React.FC = () => {
     return (
         <HeroContainer>
-            {/* Background animated circles */}
-            <Box className={styles["hero__background"]}>
-                <Box className={styles["hero__circle--one"]}></Box>
-                <Box className={styles["hero__circle--two"]}></Box>
-                <Box className={styles["hero__circle--three"]}></Box>
-            </Box>
-
-            <Container className={styles["hero__container"]}>
+            <Box className={styles["hero__container"]}>
                 <Box className={styles["hero__content"]}>
-                    <Text className={styles["hero__subtitle"]}>5+ Years of Frontend Excellence</Text>
                     <Heading as="h1" className={styles["hero__title"]}>
                         Hi, I'm <Text as={'span'} bgGradient="linear-gradient(135deg, hsl(262 83% 58%), hsl(292 84% 61%))"
                         bgClip="text"
-                        lineHeight="shorter">Josue</Text>
+                        lineHeight="shorter">Josue Lopez</Text>
                     </Heading>
+                    <Heading as={'h2'} className={styles["hero__subtitle"]}>5+ Years of Frontend Excellence</Heading>
                     <Text className={styles["hero__description"]} >
                         A passionate Frontend Engineer who believes in crafting digital experiences that make a difference.
                         From Guatemala to the world, building scalable solutions one component at a time.
@@ -47,7 +40,7 @@ export const HeroSection: React.FC = () => {
                     ))}
                 </SimpleGrid>
 
-            </Container>
+            </Box>
         </HeroContainer>
     );
 };
