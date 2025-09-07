@@ -108,7 +108,7 @@ export const StoryCardsSection: React.FC = () => {
                         y: position.y,
                         rotation: position.rotation,
                         position: "relative",
-                        zIndex: 10,
+                        zIndex: 0,
                     });
                 }
             });
@@ -154,7 +154,6 @@ export const StoryCardsSection: React.FC = () => {
                         <Box
                             key={index}
                             width={'fit-content'}
-                            zIndex={0}
                             ref={(el) => addToRefs(el, index)}
                         >
                             <StoryCard card={card} />
