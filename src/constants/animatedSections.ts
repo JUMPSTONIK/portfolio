@@ -22,7 +22,7 @@ export const animatedSections: AnimatedSectionData[] = [
             { id: 9, name: "Vue.js", content: "Vue.js", logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg", delay: 0.28 },
             { id: 10, name: "React Native", content: "React Native", logo: "https://devtop.io/wp-content/uploads/2022/10/react-native-1.png", delay: 0.14 },
             { id: 11, name: "Ionic", content: "Ionic", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg", delay: 0.26 },
-            { id: 12, name: "Electron", content: "Electron", logo: "https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg", delay: 0.06 }
+            // { id: 12, name: "Electron", content: "Electron", logo: "https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg", delay: 0.06 }
         ]
     },
     {
