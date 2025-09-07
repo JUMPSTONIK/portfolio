@@ -37,7 +37,7 @@ export const HeroSection: React.FC = () => {
                 </Box>
 
                 {/* Stats Grid */}
-                <SimpleGrid columns={{ base: 2, md: 4 }} spacing="1.5rem" className={styles["hero__stats"]}>
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="1.5rem" className={styles["hero__stats"]}>
                     {stats.map((stat, index) => (
                         <Box key={index} className={styles["hero__stat-card"]}>
                             <Flex className={styles["hero__stat-icon"]} >{stat.icon}</Flex>
