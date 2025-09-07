@@ -119,6 +119,8 @@ export const StoryCardsSection: React.FC = () => {
                         x: position.x,
                         y: position.y,
                         rotation: position.rotation,
+                        position: "relative",
+                        zIndex: 10,
                     });
                 }
             });
@@ -139,6 +141,7 @@ export const StoryCardsSection: React.FC = () => {
             cardsRef.current[index] = el;
         }
     };
+
 
     return (
         <Box 

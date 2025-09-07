@@ -1,6 +1,7 @@
 .story-cards-section
     padding: 5rem 0
     background-color: white
+    overflow: hidden // Prevent animated cards from causing horizontal scroll
 
     &__container
         max-width: 1280px
@@ -30,6 +31,7 @@
         display: grid
         grid-template-columns: 1fr
         gap: 2rem
+        position: relative // Create stacking context for animated cards
 
         +tablet
             grid-template-columns: repeat(2, 1fr)
