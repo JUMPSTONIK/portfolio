@@ -25,7 +25,6 @@ export const StoryCard: React.FC<StoryCardProps> = ({ card }) => {
 
         if (!card || !icon || !title || !story || !highlight) return;
 
-        // Enhanced hover animation with GSAP
         const handleMouseEnter = () => {
             const tl = gsap.timeline();
             
