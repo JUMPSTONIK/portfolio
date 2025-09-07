@@ -1,0 +1,54 @@
+import React from "react";
+import { Box, Container, Heading, Text, SimpleGrid, Flex } from "@chakra-ui/react";
+import { FaBookOpen, FaAward } from "react-icons/fa";
+import { FiTarget, FiGlobe, FiChevronDown } from "react-icons/fi";
+import styles from "./HeroSection.module.sass";
+import { HeroContainer } from "@/components/common/HeroContainer";
+
+const stats = [
+    { number: "100+", label: "Courses Completed", icon: <FaBookOpen /> },
+    { number: "15+", label: "Projects Delivered", icon: <FiTarget /> },
+    { number: "2", label: "Languages", icon: <FiGlobe /> },
+    { number: "Legend", label: "Platzi Status", icon: <FaAward /> },
+];
+
+export const HeroSection: React.FC = () => {
+    return (
+        <HeroContainer>
+            {/* Background animated circles */}
+            <Box className={styles["hero__background"]}>
+                <Box className={styles["hero__circle--one"]}></Box>
+                <Box className={styles["hero__circle--two"]}></Box>
+                <Box className={styles["hero__circle--three"]}></Box>
+            </Box>
+
+            <Container className={styles["hero__container"]}>
+                <Box className={styles["hero__content"]}>
+                    <Text className={styles["hero__subtitle"]}>5+ Years of Frontend Excellence</Text>
+                    <Heading as="h1" className={styles["hero__title"]}>
+                        Hi, I'm <Text as={'span'} bgGradient="linear-gradient(135deg, hsl(262 83% 58%), hsl(292 84% 61%))"
+                        bgClip="text"
+                        lineHeight="shorter">Josue</Text>
+                    </Heading>
+                    <Text className={styles["hero__description"]} >
+                        A passionate Frontend Engineer who believes in crafting digital experiences that make a difference.
+                        From Guatemala to the world, building scalable solutions one component at a time.
+                    </Text>
+                </Box>
+
+                {/* Stats Grid */}
+                <SimpleGrid columns={{ base: 2, md: 4 }} spacing="1.5rem" className={styles["hero__stats"]}>
+                    {stats.map((stat, index) => (
+                        <Box key={index} className={styles["hero__stat-card"]}>
+                            <Flex className={styles["hero__stat-icon"]} >{stat.icon}</Flex>
+                            <Text className={styles["hero__stat-number"]} >{stat.number}</Text>
+                            <Text className={styles["hero__stat-label"]} >{stat.label}</Text>
+                        </Box>
+                    ))}
+                </SimpleGrid>
+
+            </Container>
+        </HeroContainer>
+    );
+};
+
