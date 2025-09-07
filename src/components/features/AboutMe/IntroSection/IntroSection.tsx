@@ -4,8 +4,8 @@ import styles from './IntroSection.module.sass'
 export const IntroSection: React.FC = () => (
   <div className={styles['intro']}>
     <div>
-      <h1 className={styles['intro__title']}>Mi Portafolio</h1>
-      <p className={styles['intro__subtitle']}>Scroll para explorar mis habilidades</p>
+      <h1 className={styles['intro__title']}>Technology Mastery</h1>
+      <p className={styles['intro__subtitle']}>Scroll to know from frontend frameworks to backend solutions, here's my technical arsenal</p>
     </div>
   </div>
 )

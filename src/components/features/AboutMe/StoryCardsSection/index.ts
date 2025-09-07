@@ -1,1 +1,1 @@
-export {StoryCardsSection} from './StoryCardsSection';
+export { StoryCardsSection } from './StoryCardsSection';

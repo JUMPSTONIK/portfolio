@@ -18,13 +18,6 @@ export const HeroContainer:FC<HeroContainerProps> = ({children}) => {
         <Box
             ref={containerRef}
             className={`${styles.hero}`}
-            position="relative"
-            minHeight="100vh"
-            background="linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 50%, #ddd6fe 100%)"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            overflow="hidden"
             px={4}
         >
             {children}

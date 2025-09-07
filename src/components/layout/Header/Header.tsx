@@ -77,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({
                         <IconButton
                             size='lg'
                             aria-label="Toggle mobile menu"
-                            icon={isOpen ? <CloseIcon width={50} height={50} /> : <HamburgerIcon color={isScrolled ? 'black' : '#7c3aed'} width={30} height={30}/>}
+                            icon={isOpen ? <CloseIcon width={50} height={50} /> : <HamburgerIcon color={'#7c3aed'} width={30} height={30}/>}
                             className={styles.header__menuButton}
                             onClick={isOpen ? onClose : onOpen}
                         />

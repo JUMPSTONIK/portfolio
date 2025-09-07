@@ -1,68 +1,103 @@
 'use client'
-import React, { useState } from "react";
-import { Box, Container, Heading, Text, SimpleGrid } from "@chakra-ui/react";
-import {
-    FiMap,
-    FiBookOpen,
-    FiUsers,
-    FiPocket,
-    FiCoffee,
-    FiHeart,
-} from "react-icons/fi";
+import { Box, Heading, Text, SimpleGrid } from "@chakra-ui/react";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./StoryCardsSection.module.sass";
-import { StoryCardType } from "@/types/aboutMe";
 import { StoryCard } from "../StoryCard";
+import { storyCards } from "@/constants/storyCards";
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 export const StoryCardsSection: React.FC = () => {
-    const [activeStoryCard, setActiveStoryCard] = useState<number | null>(null);
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const cardsRef = useRef<HTMLDivElement[]>([]);
 
-    const storyCards: StoryCardType[] = [
-        {
-            icon: <FiMap className={styles["story-cards-section__icon"]} />,
-            title: "From Guatemala with Code",
-            story:
-                "Born and raised in Guatemala, I discovered my passion for technology while studying Computer Science at Universidad del Valle. The vibrant culture of my homeland taught me to approach problems with creativity and persistence.",
-            highlight: "Cultural diversity fuels innovation",
-        },
-        {
-            icon: <FiBookOpen className={styles["story-cards-section__icon"]} />,
-            title: "The Learning Machine",
-            story:
-                "With over 100 courses completed on Platzi and achieving Legend status, I'm proof that continuous learning isn't just a buzzword—it's a lifestyle. Every new framework is an adventure.",
-            highlight: "Never stop growing",
-        },
-        {
-            icon: <FiUsers className={styles["story-cards-section__icon"]} />,
-            title: "Team Player & Mentor",
-            story:
-                "I believe the best code is written together. Whether I'm pair programming, code reviewing, or mentoring junior developers, collaboration brings out the best in everyone.",
-            highlight: "Knowledge shared is knowledge multiplied",
-        },
-        {
-            icon: <FiPocket className={styles["story-cards-section__icon"]} />,
-            title: "Innovation Enthusiast",
-            story:
-                "From exploring AI tools to experimenting with the latest React features, I'm always pushing boundaries. Technology evolves fast, and I love being at the forefront of that evolution.",
-            highlight: "The future is built today",
-        },
-        {
-            icon: <FiCoffee className={styles["story-cards-section__icon"]} />,
-            title: "Problem Solver at Heart",
-            story:
-                "Give me a complex bug or an architectural challenge, and I'm in my element. I see every problem as a puzzle waiting to be solved with elegant, scalable solutions.",
-            highlight: "Complexity simplified through code",
-        },
-        {
-            icon: <FiHeart className={styles["story-cards-section__icon"]} />,
-            title: "Purpose-Driven Developer",
-            story:
-                "I don't just write code; I craft digital experiences that matter. Every component, every optimization, every user interaction is an opportunity to make someone's day a little better.",
-            highlight: "Code with purpose, build with heart",
-        },
-    ];
+    useEffect(() => {
+        const section = sectionRef.current;
+        const cards = cardsRef.current;
+
+        if (!section || cards.length === 0) return;
+
+        // Set initial states for cards - scattered around from different corners
+        cards.forEach((card, index) => {
+            if (!card) return;
+            
+            // Define starting positions based on card index
+            const positions = [
+                { x: -300, y: -200, rotation: -45 },    // Top-left
+                { x: 300, y: -200, rotation: 45 },      // Top-right
+                { x: -300, y: 200, rotation: 135 },     // Bottom-left
+                { x: 300, y: 200, rotation: -135 }      // Bottom-right
+            ];
+            
+            const position = positions[index] || positions[index % 4];
+            
+            gsap.set(card, {
+                x: position.x,
+                y: position.y,
+                rotation: position.rotation,
+                scale: 0.5,
+                opacity: 0,
+            });
+        });
+
+        // Create the magnetic assembly animation
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "center 90%", // Trigger when section center reaches 80% of viewport
+                end: "center 10%",
+                toggleActions: "play none none reverse",
+                // markers: true, // Uncomment for debugging
+            }
+        });
+
+        // Animate each card with staggered timing
+        cards.forEach((card, index) => {
+            if (!card) return;
+            
+            tl.to(card, {
+                x: 0,
+                y: 0,
+                rotation: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 1.2,
+                ease: "back.out(1.7)", // Elastic bounce effect
+                onStart: () => {
+                    // Add a subtle magnetic "pull" effect
+                    gsap.to(card, {
+                        scale: 1.05,
+                        duration: 0.1,
+                        yoyo: true,
+                        repeat: 1,
+                        ease: "power2.inOut"
+                    });
+                }
+            }, index * 0.2); // Stagger by 0.2 seconds
+        });
+
+        // Cleanup function
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, []);
+
+    // Function to add card refs
+    const addToRefs = (el: HTMLDivElement | null, index: number) => {
+        if (el && !cardsRef.current.includes(el)) {
+            cardsRef.current[index] = el;
+        }
+    };
 
     return (
-        <Box as="section" className={styles["story-cards-section"]}>
+        <Box 
+            as="section" 
+            className={styles["story-cards-section"]}
+            ref={sectionRef}
+        >
             <Box className={styles["story-cards-section__container"]}>
                 <Box className={styles["story-cards-section__header"]}>
                     <Heading as="h2" className={styles["story-cards-section__title"]}>
@@ -79,14 +114,12 @@ export const StoryCardsSection: React.FC = () => {
                     className={styles["story-cards-section__grid"]}
                 >
                     {storyCards.map((card, index) => (
-                        <StoryCard
+                        <Box
                             key={index}
-                            card={card}
-                            index={index}
-                            isActive={activeStoryCard === index}
-                            onMouseEnter={() => setActiveStoryCard(index)}
-                            onMouseLeave={() => setActiveStoryCard(null)}
-                        />
+                            ref={(el) => addToRefs(el, index)}
+                        >
+                            <StoryCard card={card} />
+                        </Box>
                     ))}
                 </SimpleGrid>
             </Box>
