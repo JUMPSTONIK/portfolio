@@ -24,6 +24,8 @@
         margin-bottom: 1.5rem
         line-height: 1.2
 
+        +fade-in-up(500ms, 0ms, 30px)
+
         +tablet
             font-size: 4.5rem !important
 
@@ -36,6 +38,7 @@
         font-size: 1.25rem !important
         margin-bottom: 1rem
         color: #363d49cc
+        +fade-in-up(500ms, 250ms, 30px)
 
         +tablet
             font-size: 1.5rem !important
@@ -48,6 +51,7 @@
         color: #363d49cc
         max-width: 42rem
         margin: 0 auto 3rem
+        +fade-in-up(500ms, 750ms, 30px)
 
     &__stats
         margin-bottom: 3rem
@@ -59,10 +63,11 @@
         border: 1px solid rgba(255, 255, 255, 0.2)
         background-color: rgba(255, 255, 255, 0.1)
         box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15)
-        transition: transform 0.3s ease
+        +fade-in-up(500ms, var(--delay, 0ms), 30px)
 
         &:hover
             transform: scale(1.05)
+
 
     &__stat-icon
         justify-content: center

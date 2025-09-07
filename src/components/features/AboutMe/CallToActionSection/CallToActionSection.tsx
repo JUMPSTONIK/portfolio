@@ -2,9 +2,13 @@ import React from "react";
 import { Box, Container, Heading, Text, Button, Stack } from "@chakra-ui/react";
 import styles from "./CallToActionSection.module.sass";
 
-export const CallToActionSection: React.FC = () => {
+type CallToActionSectionProps = {
+    bgColor?: string
+}
+
+export const CallToActionSection: React.FC<CallToActionSectionProps> = ({bgColor = ''}) => {
     return (
-        <Box as="section" className={styles["cta-section"]}>
+        <Box as="section" backgroundColor={bgColor} className={styles["cta-section"]}>
             <Box className={styles["cta-section__container"]}>
                 <Box className={styles["cta-section__content"]}>
                     <Heading as="h2" className={styles["cta-section__title"]}>

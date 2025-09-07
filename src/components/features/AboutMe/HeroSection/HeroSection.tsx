@@ -19,8 +19,8 @@ export const HeroSection: React.FC = () => {
                 <Box className={styles["hero__content"]}>
                     <Heading as="h1" className={styles["hero__title"]}>
                         Hi, I'm <Text as={'span'} bgGradient="linear-gradient(135deg, hsl(262 83% 58%), hsl(292 84% 61%))"
-                        bgClip="text"
-                        lineHeight="shorter">Josue Lopez</Text>
+                            bgClip="text"
+                            lineHeight="shorter">Josue Lopez</Text>
                     </Heading>
                     <Heading as={'h2'} className={styles["hero__subtitle"]}>5+ Years of Frontend Excellence</Heading>
                     <Text className={styles["hero__description"]} >
@@ -32,10 +32,14 @@ export const HeroSection: React.FC = () => {
                 {/* Stats Grid */}
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="1.5rem" className={styles["hero__stats"]}>
                     {stats.map((stat, index) => (
-                        <Box key={index} className={styles["hero__stat-card"]}>
-                            <Flex className={styles["hero__stat-icon"]} >{stat.icon}</Flex>
-                            <Text className={styles["hero__stat-number"]} >{stat.number}</Text>
-                            <Text className={styles["hero__stat-label"]} >{stat.label}</Text>
+                        <Box
+                            key={index}
+                            className={styles["hero__stat-card"]}
+                            style={{ "--delay": `${index * 250}ms` } as React.CSSProperties}
+                        >
+                            <Flex className={styles["hero__stat-icon"]}>{stat.icon}</Flex>
+                            <Text className={styles["hero__stat-number"]}>{stat.number}</Text>
+                            <Text className={styles["hero__stat-label"]}>{stat.label}</Text>
                         </Box>
                     ))}
                 </SimpleGrid>

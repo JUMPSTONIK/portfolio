@@ -27,7 +27,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({ card }) => {
 
         const handleMouseEnter = () => {
             const tl = gsap.timeline();
-            
+
             tl.to(card, {
                 scale: 1.05,
                 backgroundColor: "#8b5cf6",
@@ -36,31 +36,31 @@ export const StoryCard: React.FC<StoryCardProps> = ({ card }) => {
                 duration: 0.2,
                 ease: "power2.out"
             })
-            .to(icon, {
-                background: "rgba(255, 255, 255, 0.2)",
-                duration: 0.2,
-                ease: "power2.out"
-            }, 0)
-            .to(title, {
-                color: "white",
-                duration: 0.2,
-                ease: "power2.out"
-            }, 0)
-            .to(story, {
-                color: "rgba(255, 255, 255, 0.9)",
-                duration: 0.2,
-                ease: "power2.out"
-            }, 0)
-            .to(highlight, {
-                color: "rgba(255, 255, 255, 0.8)",
-                duration: 0.2,
-                ease: "power2.out"
-            }, 0);
+                .to(icon, {
+                    background: "rgba(255, 255, 255, 0.2)",
+                    duration: 0.2,
+                    ease: "power2.out"
+                }, 0)
+                .to(title, {
+                    color: "white",
+                    duration: 0.2,
+                    ease: "power2.out"
+                }, 0)
+                .to(story, {
+                    color: "rgba(255, 255, 255, 0.9)",
+                    duration: 0.2,
+                    ease: "power2.out"
+                }, 0)
+                .to(highlight, {
+                    color: "rgba(255, 255, 255, 0.8)",
+                    duration: 0.2,
+                    ease: "power2.out"
+                }, 0);
         };
 
         const handleMouseLeave = () => {
             const tl = gsap.timeline();
-            
+
             tl.to(card, {
                 scale: 1,
                 backgroundColor: "white",
@@ -69,26 +69,26 @@ export const StoryCard: React.FC<StoryCardProps> = ({ card }) => {
                 duration: 0.2,
                 ease: "power2.out"
             })
-            .to(icon, {
-                background: "linear-gradient(135deg, #7c3aed, #ec4899)",
-                duration: 0.2,
-                ease: "power2.out"
-            }, 0)
-            .to(title, {
-                color: "#374151",
-                duration: 0.2,
-                ease: "power2.out"
-            }, 0)
-            .to(story, {
-                color: "#6b7280",
-                duration: 0.2,
-                ease: "power2.out"
-            }, 0)
-            .to(highlight, {
-                color: "#8b5cf6",
-                duration: 0.2,
-                ease: "power2.out"
-            }, 0);
+                .to(icon, {
+                    background: "linear-gradient(135deg, #7c3aed, #ec4899)",
+                    duration: 0.2,
+                    ease: "power2.out"
+                }, 0)
+                .to(title, {
+                    color: "#374151",
+                    duration: 0.2,
+                    ease: "power2.out"
+                }, 0)
+                .to(story, {
+                    color: "#6b7280",
+                    duration: 0.2,
+                    ease: "power2.out"
+                }, 0)
+                .to(highlight, {
+                    color: "#8b5cf6",
+                    duration: 0.2,
+                    ease: "power2.out"
+                }, 0);
         };
 
         card.addEventListener('mouseenter', handleMouseEnter);
@@ -106,30 +106,30 @@ export const StoryCard: React.FC<StoryCardProps> = ({ card }) => {
             className={styles["story-card"]}
             ref={cardRef}
         >
-            <Box 
+            <Box
                 className={styles["story-card__icon-wrapper"]}
                 ref={iconRef}
             >
                 {card.icon}
             </Box>
 
-            <Heading 
-                as="h3" 
+            <Heading
+                as="h3"
                 className={styles["story-card__title"]}
                 ref={titleRef}
             >
                 {card.title}
             </Heading>
 
-            <Text 
+            <Text
                 className={styles["story-card__story"]}
                 ref={storyRef}
             >
                 {card.story}
             </Text>
 
-            <Text 
-                as="div" 
+            <Text
+                as="div"
                 className={styles["story-card__highlight"]}
                 ref={highlightRef}
             >

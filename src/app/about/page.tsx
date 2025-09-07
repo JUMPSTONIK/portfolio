@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/features/AboutMe/HeroSection";
 import { ScrollAnimation } from "@/components/features/AboutMe/ScrollAnimation/ScrollAnimation";
 import { StoryCardsSection } from "@/components/features/AboutMe/StoryCardsSection";
 
-export default function Home() {
+export default function AboutPage() {
   return (
     <>
       <HeroSection />
@@ -11,7 +11,7 @@ export default function Home() {
       <StoryCardsSection />
       {/* <CoreValuesSection /> */}
       <ScrollAnimation />
-      <CallToActionSection />
+      <CallToActionSection/>
     </>
   );
 }
