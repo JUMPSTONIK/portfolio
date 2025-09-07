@@ -1,11 +1,10 @@
-"use client";
 
 import { Box, Text, Link, Flex, Image, chakra, Link as ChakraLink } from "@chakra-ui/react";
 import styles from "./Footer.module.sass";
 import { techStack } from "@/constants/teckStack";
 import { navLinks } from "@/constants/navLinks";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { TiSocialAtCircular, TiSocialGithub, TiSocialLinkedin } from "react-icons/ti";
+import { TbExternalLink } from "react-icons/tb";
 
 export const Footer = () => {
     return (
@@ -36,7 +35,7 @@ export const Footer = () => {
 
                     <Link key={item.href} href={item.href} target={item.isExternal ? '_blank' : undefined} className={styles.footer__navLink} title="Twitter">
                         {item.label}
-                        {item.isExternal && <ExternalLinkIcon className={styles['footer__nav-icon']}/>}
+                        {item.isExternal && <TbExternalLink className={styles['footer__nav-icon']}/>}
                     </Link>
                     ))}
 

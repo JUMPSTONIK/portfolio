@@ -48,7 +48,7 @@ export const AnimatedSection: React.FC<Props> = ({ title, elements, isOdd }) => 
 
         ScrollTrigger.create({
             trigger: section,
-            start: "top 70%",
+            start: "top 50%",
             end: "bottom 20%",
             onEnter: () => {
                 gsap.to(titleEl, { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" })
