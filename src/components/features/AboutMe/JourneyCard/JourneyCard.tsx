@@ -14,13 +14,9 @@ export const JourneyCard: React.FC<JourneyCardProps> = ({ milestone, index }) =>
         <Box
             className={styles.card}
             style={{
-                // Pasamos variables CSS al componente
-                // Color principal de la card
                 ["--card-color" as any]: milestone.color,
-                // Sombra base y de hover dependen del index
                 ["--card-shadow-default" as any]: `0 20px 40px rgba(${index % 2 === 0 ? "139, 92, 246" : "236, 72, 153"}, 0.1)`,
                 ["--card-shadow-hover" as any]: `0 30px 60px rgba(${index % 2 === 0 ? "139, 92, 246" : "236, 72, 153"}, 0.2)`,
-                // Glow dinámico
                 ["--card-glow" as any]: `radial-gradient(circle at center, ${milestone.color}11 0%, transparent 70%)`
             }}
         >
