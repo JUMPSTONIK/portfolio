@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Heading, Text, SimpleGrid, Flex } from "@chakra-ui/react";
+import { Box, Container, Heading, Text, SimpleGrid, Flex, Card, CardBody } from "@chakra-ui/react";
 import { FaBookOpen, FaAward } from "react-icons/fa";
 import { FiTarget, FiGlobe, FiChevronDown } from "react-icons/fi";
 import styles from "./HeroSection.module.sass";
@@ -29,21 +29,21 @@ export const HeroSection: React.FC = () => {
                     </Text>
                 </Box>
 
-                {/* Stats Grid */}
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="1.5rem" className={styles["hero__stats"]}>
                     {stats.map((stat, index) => (
-                        <Box
+                        <Card
                             key={index}
-                            className={styles["hero__stat-card"]}
+                            variant="glass"
                             style={{ "--delay": `${index * 250}ms` } as React.CSSProperties}
                         >
-                            <Flex className={styles["hero__stat-icon"]}>{stat.icon}</Flex>
-                            <Text className={styles["hero__stat-number"]}>{stat.number}</Text>
-                            <Text className={styles["hero__stat-label"]}>{stat.label}</Text>
-                        </Box>
+                            <CardBody>
+                                <Flex className={styles["hero__stat-icon"]}>{stat.icon}</Flex>
+                                <Text className={styles["hero__stat-number"]}>{stat.number}</Text>
+                                <Text className={styles["hero__stat-label"]}>{stat.label}</Text>
+                            </CardBody>
+                        </Card>
                     ))}
                 </SimpleGrid>
-
             </Box>
         </HeroContainer>
     );

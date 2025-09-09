@@ -10,7 +10,6 @@ export default function AboutPage() {
       <HeroSection />
       <JourneySection />
       <StoryCardsSection />
-      {/* <CoreValuesSection /> */}
       <ScrollAnimation />
       <CallToActionSection/>
     </>

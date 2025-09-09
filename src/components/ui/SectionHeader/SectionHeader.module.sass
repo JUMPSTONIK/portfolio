@@ -1,0 +1,51 @@
+@import '../../styles/mixins'
+
+.section-header
+    text-align: center
+    margin-bottom: 3rem
+    +fade-in-up(500ms,0ms,30x)
+
+    &__title
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 0.5rem
+        font-size: 2rem !important
+        font-weight: 700
+        color: var(--chakra-colors-gray-900)
+        margin-bottom: 1rem
+        line-height: 1.2
+
+        +tablet
+            font-size: 2.5rem !important
+
+        +desktop
+            font-size: 3rem !important
+
+    &__icon-wrapper
+        align-items: center
+        justify-content: center
+
+        svg
+            width: 2rem
+            height: 2rem
+            color: $brand-primary
+
+        +tablet
+            width: 2.5rem
+            height: 2.5rem
+
+        +desktop
+            width: 3rem
+            height: 3rem
+
+    &__subtitle
+        color: $gray-medium
+        font-size: 1rem
+        max-width: 36rem
+        margin: 0 auto
+        line-height: 1.5
+
+        +tablet
+            font-size: 1.125rem
+

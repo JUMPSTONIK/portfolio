@@ -60,7 +60,6 @@ export const JourneySection: React.FC = () => {
     return (
         <Box as="section" className={styles["journey"]}>
             <Box className={styles["journey__container"]}>
-                {/* Header */}
                 <Box className={styles["journey__header"]}>
                     <Heading as="h2" className={styles["journey__title"]}>
                         My Journey
@@ -70,7 +69,6 @@ export const JourneySection: React.FC = () => {
                     </Text>
                 </Box>
 
-                {/* Timeline */}
                 <Box className={styles["journey__timeline"]}>
                     <Box className={styles["journey__line"]} />
 
