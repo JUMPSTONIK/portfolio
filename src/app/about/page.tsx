@@ -1,4 +1,4 @@
-import { CallToActionSection } from "@/components/features/AboutMe/CallToActionSection";
+import { CallToActionSection } from "@/components/ui/CallToActionSection";
 import { HeroSection } from "@/components/features/AboutMe/HeroSection";
 import { JourneySection } from "@/components/features/AboutMe/JourneySection";
 import { ScrollAnimation } from "@/components/features/AboutMe/ScrollAnimation/ScrollAnimation";

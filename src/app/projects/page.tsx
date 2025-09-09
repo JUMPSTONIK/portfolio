@@ -1,4 +1,4 @@
-import { CallToActionSection } from '@/components/features/AboutMe/CallToActionSection'
+import { CallToActionSection } from '@/components/ui/CallToActionSection'
 import React from 'react'
 
 function ProjectsPage() {
