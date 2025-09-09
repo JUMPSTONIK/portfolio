@@ -21,7 +21,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
             />
 
             <SimpleGrid
-                columns={{ base: 1, md: 3 }}
+                columns={{ base: 1, md: 2, lg: 3 }}
                 spacing={6}
                 className={styles['testimonials-section__grid']}
             >

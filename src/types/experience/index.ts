@@ -13,6 +13,7 @@ export interface TestimonialData {
     role: string;
     content: string;
     rating: number;
+    image: string;
 }
 
 export interface StatItem {
