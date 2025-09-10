@@ -42,7 +42,6 @@ export const AnimatedSection: React.FC<Props> = ({ title, elements, isOdd }) => 
 
         const containers = els.map(ref => ref?.element).filter(Boolean)
 
-        // Set initial state - solo para el contenedor, no para la tarjeta interna
         gsap.set(containers, { y: 200, opacity: 0, scale: 0.8 })
         gsap.set(titleEl, { x: isOdd ? -300 : 300, opacity: 0 })
 

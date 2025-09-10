@@ -4,7 +4,6 @@ import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
 const { definePartsStyle, defineMultiStyleConfig } =
     createMultiStyleConfigHelpers(cardAnatomy.keys)
 
-// Define the glass variant
 const glass = definePartsStyle({
     container: {
         backdropFilter: 'blur(8px)',
@@ -13,7 +12,7 @@ const glass = definePartsStyle({
         border: '1px solid rgba(255, 255, 255, 0.2)',
         backgroundColor: 'rgba(255, 255, 255, 0.1)',
         boxShadow: '0 4px 20px rgba(139, 92, 246, 0.15)',
-        transition: 'all 0.2s ease-in-out', // Added transition for smoother hover
+        transition: 'all 0.2s ease-in-out',
         _hover: {
             transform: 'scale(1.05)',
         },
@@ -31,7 +30,6 @@ const glass = definePartsStyle({
     },
 })
 
-// Export the card theme configuration
 export const Card = defineMultiStyleConfig({
     variants: { glass },
 })

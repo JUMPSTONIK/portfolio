@@ -33,7 +33,6 @@ export const FloatingElement = forwardRef<FloatingElementRef, { children: React.
           repeat: -1,
           yoyo: true,
           ease: "power2.inOut",
-          // delay: Math.random() * 0.1
         })
       }
     }))

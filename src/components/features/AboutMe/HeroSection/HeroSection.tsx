@@ -34,9 +34,9 @@ export const HeroSection: React.FC = () => {
                         <Card
                             key={index}
                             variant="glass"
-                            style={{ "--delay": `${index * 250}ms` } as React.CSSProperties}
+                            className={`${styles["hero__stat-card"]} delay-[${250 * index}ms]`}
                         >
-                            <CardBody>
+                            <CardBody >
                                 <Flex className={styles["hero__stat-icon"]}>{stat.icon}</Flex>
                                 <Text className={styles["hero__stat-number"]}>{stat.number}</Text>
                                 <Text className={styles["hero__stat-label"]}>{stat.label}</Text>

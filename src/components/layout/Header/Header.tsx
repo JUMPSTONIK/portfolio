@@ -63,7 +63,6 @@ export const Header: React.FC<HeaderProps> = ({
                                 className={`${styles['nav-link']} ${!isScrolled && '!text-brand-secondary'}`}
                             >
                                 {item.label}
-                                {/* {item.badge && <span className={styles['nav-badge']}>{item.badge}</span>} */}
                                 {item.isExternal && <ExternalLinkIcon className={styles['nav-link-icon']} />}
                             </ChakraLink>
                         ))}

@@ -21,7 +21,6 @@ interface ExperienceCardProps {
 export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) => {
     return (
         <Box className={`${styles['experience-card']} ${styles[`experience-card--delay-${index}`]}`}>
-            {/* Header */}
             <Box className={styles['experience-card__header']}>
                 <Box className={styles['experience-card__title-section']}>
                     <Heading as="h3" className={styles['experience-card__position']}>
@@ -50,10 +49,8 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, inde
                 </Box>
             </Box>
 
-            {/* Content */}
             <Box className={styles['experience-card__content']}>
                 <Flex className={styles['experience-card__grid']}>
-                    {/* Achievements */}
                     <Box className={styles['experience-card__achievements']}>
                         <Heading as="h4" className={styles['experience-card__section-title']}>
                             <FiTrendingUp className={styles['experience-card__section-icon']} />
@@ -70,7 +67,6 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, inde
                         </Box>
                     </Box>
 
-                    {/* Technologies */}
                     <Box className={styles['experience-card__technologies']}>
                         <Heading as="h4" className={styles['experience-card__section-title']}>
                             Technologies

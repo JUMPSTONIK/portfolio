@@ -116,7 +116,6 @@ export const StoryCardsSection: React.FC = () => {
 
         window.addEventListener('resize', handleResize);
 
-        // Cleanup function
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
             window.removeEventListener('resize', handleResize);

@@ -18,7 +18,7 @@ export const useGSAPBubbles = (containerRef: React.RefObject<HTMLDivElement | nu
       bubble.style.top = `${Math.random() * 100}%`;
       
       const opacity = Math.random() * 0.3 + 0.1;
-      const hue = Math.random() * 60 + 240; // Purple range
+      const hue = Math.random() * 60 + 240; 
       bubble.style.background = `hsla(${hue}, 70%, 80%, ${opacity})`;
       bubble.style.borderRadius = '50%';
       bubble.style.position = 'absolute';
@@ -32,7 +32,6 @@ export const useGSAPBubbles = (containerRef: React.RefObject<HTMLDivElement | nu
       
       container.appendChild(bubble);
       
-      // Remove bubble after animation
       setTimeout(() => {
         if (bubble.parentNode) {
           bubble.parentNode.removeChild(bubble);
@@ -44,7 +43,6 @@ export const useGSAPBubbles = (containerRef: React.RefObject<HTMLDivElement | nu
       setTimeout(() => createBubble(), i * 500);
     }
 
-    // Create new bubbles periodically
     const interval = setInterval(createBubble, 500);
 
     return () => {

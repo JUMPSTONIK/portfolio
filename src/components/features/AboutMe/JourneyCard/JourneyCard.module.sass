@@ -5,18 +5,29 @@
     border: 1px solid #1f2937
     background-color: rgba(17, 24, 39, 0.5)
     backdrop-filter: blur(12px)
-    transition: all 0.5s
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1)
     box-shadow: var(--card-shadow-default)
+    will-change: transform, box-shadow
+    transform: translateZ(0)
 
-    &:hover
-        transform: scale(1.02)
+    &:hover:not(.cardNoHover)
+        transform: scale3d(1.02, 1.02, 1) translateZ(0)
         box-shadow: var(--card-shadow-hover)
 
         .card__image
-            transform: scale(1.1)
+            transform: scale3d(1.1, 1.1, 1) translateZ(0)
 
         .card__glow
             opacity: 1
+
+    &.cardNoHover
+        pointer-events: none
+        
+        .card__image
+            transform: scale3d(1, 1, 1) translateZ(0)
+            
+        .card__glow
+            opacity: 0
 
     &__layout
         display: flex
@@ -37,12 +48,15 @@
         height: 100%
         object-fit: cover
         filter: brightness(0.7) contrast(1.2)
-        transition: transform 0.5s
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+        will-change: transform
+        transform: translateZ(0)
 
     &__imageOverlay
         position: absolute
         inset: 0
         background: linear-gradient(to bottom, transparent, rgba(15, 14, 23, 0.9))
+        transform: translateZ(0)
 
     &__iconBadge
         position: absolute
@@ -55,6 +69,11 @@
         align-items: center
         justify-content: center
         color: white
+        transform: translateZ(0)
+        transition: transform 0.2s ease-out
+        
+        &:hover
+            transform: scale3d(1.1, 1.1, 1) translateZ(0)
 
     &__content
         flex: 1
@@ -64,29 +83,34 @@
         font-size: 0.875rem
         font-weight: bold
         margin-bottom: 0.5rem
+        text-rendering: optimizeLegibility
 
     &__phase
         font-size: 1.5rem
         font-weight: bold
         color: white
         margin-bottom: 0.5rem
+        text-rendering: optimizeLegibility
 
     &__description
         color: #9ca3af
         margin-bottom: 0.75rem
         line-height: 1.5
+        text-rendering: optimizeLegibility
 
     &__details
         font-size: 0.875rem
         color: #6b7280
         margin-bottom: 1rem
         line-height: 1.6
+        text-rendering: optimizeLegibility
 
     &__focus
         font-size: 0.75rem
         font-weight: 600
         text-transform: uppercase
         letter-spacing: 0.05em
+        text-rendering: optimizeLegibility
 
     &__glow
         position: absolute
@@ -94,4 +118,27 @@
         pointer-events: none
         background: var(--card-glow)
         opacity: 0
-        transition: opacity 0.25s
+        transition: opacity 0.25s ease-out
+        will-change: opacity
+        transform: translateZ(0)
+
+.card
+    contain: layout style paint
+
+@media (prefers-reduced-motion: no-preference)
+    .card
+        &:hover:not(.cardNoHover)
+            transform: scale3d(1.02, 1.02, 1) translateZ(0)
+
+@media (prefers-reduced-motion: reduce)
+    .card
+        transition: none
+        
+        &:hover:not(.cardNoHover)
+            transform: none
+            
+            .card__image
+                transform: none
+                
+            .card__glow
+                opacity: 0.5

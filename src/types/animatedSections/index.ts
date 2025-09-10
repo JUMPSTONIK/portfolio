@@ -1,9 +1,9 @@
 export interface Element {
     id: number
-    content: string        // mostrable (uso el mismo name para accesibilidad)
+    content: string 
     delay: number
     name: string
-    logo: string           // ruta al logo (ej. /public/logos/* en Next.js)
+    logo: string          
 }
 
 export interface AnimatedSectionData {
