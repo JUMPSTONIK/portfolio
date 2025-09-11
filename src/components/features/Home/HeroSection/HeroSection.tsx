@@ -50,7 +50,7 @@ export const HeroSection = () => {
                     lineHeight="relaxed"
                     maxWidth="500px"
                 >
-                    Creando experiencias digitales excepcionales con React, TypeScript y las últimas tecnologías frontend. Apasionado por el código limpio y el diseño intuitivo.
+                    Creating exceptional digital experiences with React, Angular, Vue.js, TypeScript, and the latest frontend technologies. Passionate about clean code and intuitive design.
                 </Text>
 
                 <Box className={`${styles.hero__actions}`} pt={4}>
