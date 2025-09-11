@@ -14,7 +14,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
     return (
         <Box className={styles['testimonials-section']}>
             <SectionHeader
-                title="Client Testimonials"
+                title="Testimonials"
                 subtitle="What colleagues and clients say about working with me"
                 icon={<FaUsers />}
                 delay={0.8}
