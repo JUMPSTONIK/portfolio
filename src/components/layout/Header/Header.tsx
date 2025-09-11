@@ -35,13 +35,6 @@ export const Header: React.FC<HeaderProps> = ({
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    const handleNavigation = (href: string, isExternal?: boolean) => {
-        if (isExternal) window.open(href, '_blank')
-        else router.push(href)
-        onClose()
-    }
-
-    const handleCta = () => onCtaClick ? onCtaClick() : router.push('/contact')
 
     return (
         <>
@@ -89,8 +82,6 @@ export const Header: React.FC<HeaderProps> = ({
                 onClose={onClose}
                 navItems={navLinks}
                 ctaText={ctaText}
-                onNavigation={handleNavigation}
-                onCtaClick={handleCta}
             />
         </>
     )
