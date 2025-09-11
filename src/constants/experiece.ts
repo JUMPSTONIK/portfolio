@@ -147,7 +147,7 @@ export const testimonialsData: TestimonialData[] = [
     {
         name: "Ashley Valdez",
         role: "Product Owner at OrchardTek",
-        content: "Josue's exceptional skills in React and frontend technologies consistently impressed both our team and clients. His dedication to delivering excellence and going above and beyond project requirements made him an invaluable team member.",
+        content: "Josue's exceptional skills in React and frontend technologies consistently impressed both our team and clients. His dedication to deliver excellence and going above and beyond project requirements made him an invaluable team member.",
         rating: 5,
         image: 'https://media.licdn.com/dms/image/v2/C4E03AQGKdLAd1yKo1A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1579483562210?e=1760572800&v=beta&t=64h44py6dRQtTiPKiQtodlrBRkAhKNLq0dr1yf1onCM'
     },

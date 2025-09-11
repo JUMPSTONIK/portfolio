@@ -1,1 +1,1 @@
-export const techStack = ["HTML5", "CSS3", "Typescript", "React", "Next.js", "Tailwind CSS", "Vercel", "GSAP"]
+export const techStack = ["HTML5", "CSS3", "SASS", "Typescript", "React", "Next.js", "Tailwind CSS", "Chakra UI", "Vercel", "GSAP"]

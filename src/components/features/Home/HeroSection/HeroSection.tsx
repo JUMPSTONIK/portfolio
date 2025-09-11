@@ -55,19 +55,23 @@ export const HeroSection = () => {
 
                 <Box className={`${styles.hero__actions}`} pt={4}>
                     <Button
+                        as={'a'}
+                        href="/experience"
                         className={`${styles.hero__actions__btn_left}`}
                         variant="primary"
                         rightIcon={<span>→</span>}
                     >
-                        Ver Proyectos
+                        Check my experience
                     </Button>
 
                     <Button
+                        as={'a'}
+                        href="mailto:josuedlflorian@gmail.com?subject=Interés%20en%20tu%20perfil%20como%20Frontend%20Developer&body=Hola%20Josue,%0D%0A%0D%0AHe%20revisado%20tu%20portafolio%20y%20me%20interesa%20ponernos%20en%20contacto.%20Quisiera%20hablar%20contigo%20sobre%20una%20oportunidad%20de%20colaboración%20como%20Frontend%20Developer.%0D%0A%0D%0AQuedo%20pendiente%20de%20tu%20respuesta.%0D%0A%0D%0ASaludos."
                         className={`${styles.hero__actions__btn_right}`}
                         variant="secondary"
                         leftIcon={<span>💬</span>}
                     >
-                        Contacto
+                        Contact me
                     </Button>
                 </Box>
             </VStack>

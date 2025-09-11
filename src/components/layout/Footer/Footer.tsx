@@ -12,9 +12,7 @@ export const Footer = () => {
             <Box className={styles.footer__container}>
 
                 <Text className={styles.footer__message}>
-                    Viviendo, aprendiendo y creando soluciones digitales excepcionales,
-                    un día a la vez. Siempre en busca de nuevos desafíos y oportunidades
-                    para crecer.
+                    Living, learning, and creating exceptional digital solutions, one day at a time. Always seeking new challenges and opportunities to grow.
                 </Text>
 
                 <Flex className={styles.footer__social}>
@@ -42,7 +40,7 @@ export const Footer = () => {
                 </nav>
 
                 <Box className={styles.footer__tech}>
-                    <Text className={styles.footer__techTitle}>Hecho con</Text>
+                    <Text className={styles.footer__techTitle}>Created with</Text>
                     <Flex className={styles.footer__techList}>
                         {techStack.map(
                             (tech) => (
@@ -55,7 +53,7 @@ export const Footer = () => {
                 </Box>
 
                 <Text className={styles.footer__copyright}>
-                    © 2025 Mi Portfolio. Diseñado y desarrollado con ❤️
+                    © 2025 My Portfolio. Designed & developed with ❤️
                 </Text>
             </Box>
         </Box>
